@@ -1,0 +1,10 @@
+.container {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.navbar {
+    background-color: #9932CC;
+    color: white;
+    padding: 10px;
+}
