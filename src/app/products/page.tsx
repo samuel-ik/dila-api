@@ -69,14 +69,30 @@ export default function Page() {
                 <h1>Produtos</h1>
                 <button onClick={handleAddProduct}>Add product</button>
             </div>
-            <ul className={styles.productList} style={{ listStyleType: 'none', padding: 0 }}>
-            {products.map((product: Product, i) => (
-                <li className={styles.productItem} key={i}>
-                    {product.name} - {product.price}
-                    <button className={styles.deleteProductButton} onClick={() => handleRemoveProduct()}></button>
-                </li>
-            ))}
-            </ul>
+            { loading 
+                ? <p>Carregando perfil...</p> 
+                : <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Preço</th>
+                            <th>Quantidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            {products.map((product: Product, i) => (
+                                <tr key={i}>
+                                    <td>{product.id}</td>
+                                    <td>{product.name}</td>
+                                    <td>{product.price}</td>
+                                    <td>{product.quantity}</td>
+                                    <td><button onClick={handleRemoveProduct}>Remover Venda</button></td>
+                                </tr>
+                            ))}
+                    </tbody>
+                </table>
+            }
         </section>
     )
 }

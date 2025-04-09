@@ -8,3 +8,32 @@
     color: white;
     padding: 10px;
 }
+
+.navbarContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbarList {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbarList a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbarList a:hover {
+    text-decoration: underline;
+}
+
+.navbarList a.active {
+    font-weight: bold;
+}
+
+.navbarList a.active:hover {
+    text-decoration: none;
+}
